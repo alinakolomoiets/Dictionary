@@ -52,4 +52,4 @@ def heli(text:str,keel:str):
 	obj=gTTs(text=text,lang=keel,slow=False).save("heli.mp3") 
 	os.system("heli.mp3")
 
-#def kõik_sõna(f:str
+

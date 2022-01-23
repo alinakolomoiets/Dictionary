@@ -26,6 +26,10 @@ def uus_sõna(f:str,rida:str,l:list)->list:
 	return l
 
 def tõlkimine(l1:list,l2:list):
+	"""Tõlkimine sõna
+	:param list l1:
+	:param list l2:
+	"""
 	sõna=input("Что переводить?")
 	if sõna in l1:
 		tõlk=l2[l1.index(sõna)]
@@ -39,7 +43,7 @@ def tõlkimine(l1:list,l2:list):
 def correction(sõna:str,l:list):
 	for i in range(len(l)):
 		if l[i]==sõna:
-			uus_sõna=sõna.replace(sõna,input("Новое слово"))
+			uus_sõna=sõna.replace(sõna,input("Новое слово->"))
 			l.insert(i,uus_sõna)
 			l.remove(sõna)
 	return l
@@ -49,7 +53,5 @@ import os
 from gtts import gTTS
 
 def heli(text:str,keel:str):
-	obj=gTTs(text=text,lang=keel,slow=False).save("heli.mp3") 
+	obj=gTTS(text=text,lang=keel,slow=False).save("heli.mp3") 
 	os.system("heli.mp3")
-
-

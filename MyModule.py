@@ -44,36 +44,30 @@ def correction(sõna:str,l:list):
 	return l
 
 def kontrol(l1:list,l2:list):
-	"""
-	"""
-	punktisumma=0
-	print(1)
-	res=0
-	spisok=[]
-	spisok.extend(l1)
-	spisok.extend(l2)
-	random.shuffle(spisok)
-	print("Random list ",spisok)
-	for i in range(len(l1)):
-		print("l1 ",l1)
-		print("l2 ",l2)
-		h=input(f"Переведи данное слово - '{spisok[i]}': ")
-		if h in l1 or h in l2:
-			if spisok[i] in l1:
-				if l1.index(spisok[i])==l2.index(h):
-					res+=1
-					print('правильно!')
-					print()
-				elif spisok[i] in l2:
-					if l2.index(spisok[i])==l1.index(h):
-						res+=1
-						print('правильно!')
-						print()
-		else:
-			print("Неправильно!")
-			print()
-	p=(punktisumma/len(l1))*100
-	print("Твой ответ"+p)
+    summa=0
+    lists=[]
+    lists.extend(l1)
+    lists.extend(l2)
+    random.shuffle(lists)
+    print('random list ',lists)
+    for i in range(len(l1)):
+        otvet=input(f"Переведи данное слово - '{lists[i]}': ")
+        if otvet in l1 or otvet in l2:
+            if lists[i] in l1:
+               if l1.index(lists[i])==l2.index(otvet):
+                    summa+=1
+                    print('правильно!')
+                    print()
+            elif lists[i] in l2:
+                if l2.index(lists[i])==l1.index(otvet):
+                    summa+=1
+                    print('правильно!')
+                    print()
+        else:
+            print('Неправильно!')
+            print()
+    resultPer=(summa/len(l1))*100
+    print(f"Ваш результат: {resultPer}%")
 #import os
 #from gtts import gTTS
 
